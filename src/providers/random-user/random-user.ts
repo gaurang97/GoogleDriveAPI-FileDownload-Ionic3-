@@ -19,7 +19,7 @@ export class RandomUserProvider {
   }
  
   loadRandomUsers(){
-    return this._http.get("https://www.googleapis.com/drive/v2/files?q='1oAYI_fM9trxt2D1EvVw7V8c4vIDogwf0'+in+parents&key=AIzaSyB1eeDqBxiKK38UNKlxBkcKyFFZFwh6RIE")
+    return this._http.get("https://www.googleapis.com/drive/v2/files?q='<folderID>'+in+parents&key=<YourGoogleDriveAPIkey>")
     .map((res) =>
    { return res.json()['items'];
    });
