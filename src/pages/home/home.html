@@ -1,17 +1,27 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>
+     Google Drive API Data
+    </ion-title>
   </ion-navbar>
 </ion-header>
-
+ 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <button ion-button color="light" (click)="getUsers()">GET Users</button>
+   
+  <ion-card *ngFor="let id of user | async" >
+ 
+    <ion-item >
+      
+      <h2>Name: {{id.title}}</h2>
+      </ion-item>
+      <img src="{{id.thumbnailLink}}"> 
+      <button ion-button clear left (click)="downloadImage(id)"><ion-icon name="cloud-download"></ion-icon>Download</button>
+      <button ion-button clear right (click)="playImage(id)"><ion-icon name="play"></ion-icon>Play Now</button>
+          
+            
+          
+   
+  </ion-card>
+  
 </ion-content>
